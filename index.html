@@ -1,67 +1,76 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ithe Character Designer</title>
+    <title>TTRPG Character Sheet</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <aside class="sidebar">
             <div id="image-container">
-                <img id="char-img" src="https://via.placeholder.com/300" alt="Character Image">
+                <img id="char-img" src="https://via.placeholder.com/400" alt="Character">
             </div>
-            <input type="file" id="img-input" accept="image/*">
-            <label for="img-input" class="upload-btn">Upload Portrait</label>
+            <input type="file" id="img-input" accept="image/*" style="display:none">
+            <label for="img-input" class="upload-btn">Change Portrait</label>
         </aside>
 
         <main class="main-content">
-            <header class="header">
-                <input type="text" id="char-name" placeholder="Character Name" class="name-input">
-                <div class="level-box">
-                    Lvl: <input type="number" id="char-level" min="1" max="99" value="1">
+            <header class="char-header">
+                <input type="text" id="char-name" placeholder="CHARACTER NAME" class="name-input">
+                <div class="level-container">
+                    <span>LVL</span>
+                    <input type="text" id="char-level" placeholder="1" class="lvl-input">
                 </div>
             </header>
 
-            <section class="bio-row">
-                <input type="text" id="char-race" placeholder="Race">
-                <input type="text" id="char-class" placeholder="Class">
+            <section class="stats-row">
+                <div class="stat-card"><span>STR</span><input type="text" value="10"></div>
+                <div class="stat-card"><span>DEX</span><input type="text" value="10"></div>
+                <div class="stat-card"><span>CON</span><input type="text" value="10"></div>
+                <div class="stat-card"><span>INT</span><input type="text" value="10"></div>
+                <div class="stat-card) scale"><span>WIS</span><input type="text" value="10"></div>
+                <div class="stat-card"><span>CHA</span><input type="text" value="10"></div>
             </section>
 
-            <section class="stats-bar">
-                <div class="stat"><span>STR</span><input type="number" id="str" value="10"></div>
-                <div class="stat"><span>DEX</span><input type="number" id="dex" value="10"></div>
-                <div class="stat"><span>CON</span><input type="number" id="con" value="10"></div>
-                <div class="stat"><span>INT</span><input type="number" id="int" value="10"></div>
-                <div class="stat"><span>WIS</span><input type="number" id="wis" value="10"></div>
-                <div class="stat"><span>CHA</span><input type="number" id="cha" value="10"></div>
-            </section>
-
-            <section class="lists-container">
-                <div class="scroll-box">
-                    <h3>Gear</h3>
-                    <textarea id="gear-list" placeholder="Sword, Shield, Health Potion..."></textarea>
+            <section class="skills-section">
+                <div class="section-header">
+                    <h3>Proficiencies & Languages</h3>
+                    <button onclick="addItem('skills-list', 'Skill/Lang')">+ ADD</button>
                 </div>
-                <div class="scroll-box">
+                <div id="skills-list" class="tag-cloud"></div>
+            </section>
+
+            <section class="detail-grid">
+                <div class="box gear-box">
+                    <h3>Equipped Gear</h3>
+                    <button onclick="addComplexItem('gear-list', 'Item Name', 'Item Description')">+ Add Item</button>
+                    <div id="gear-list" class="list-container"></div>
+                </div>
+
+                <div class="box passive-box">
+                    <h3>Passives</h3>
+                    <button onclick="addComplexItem('passive-list', 'Passive Name', 'Effect')">+ Add Passive</button>
+                    <div id="passive-list" class="list-container"></div>
+                </div>
+
+                <div class="box ability-box">
                     <h3>Abilities</h3>
-                    <textarea id="ability-list" placeholder="Fireball, Second Wind, Sneak Attack..."></textarea>
-                </div>
-            </section>
-
-            <section class="skills-visual">
-                <h3>Skills</h3>
-                <div id="skills-grid">
-                    <label><input type="checkbox"> Acrobatics</label>
-                    <label><input type="checkbox"> Athletics</label>
-                    <label><input type="checkbox"> Insight</label>
-                    <label><input type="checkbox"> Stealth</label>
-                    <label><input type="checkbox"> Perception</label>
+                    <button onclick="addItem('ability-list', 'Ability Name')">+ Add Ability</button>
+                    <div id="ability-list" class="list-container"></div>
                 </div>
             </section>
         </main>
     </div>
+
+    <div id="modal" class="modal" onclick="closeModal()">
+        <div class="modal-content">
+            <h2 id="modal-title"></h2>
+            <p id="modal-desc"></p>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
