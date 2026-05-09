@@ -1,1 +1,67 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TTRPG Character Maker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div id="image-container">
+                <img id="char-img" src="https://via.placeholder.com/300" alt="Character Image">
+            </div>
+            <input type="file" id="img-input" accept="image/*">
+            <label for="img-input" class="upload-btn">Upload Portrait</label>
+        </aside>
+
+        <main class="main-content">
+            <header class="header">
+                <input type="text" id="char-name" placeholder="Character Name" class="name-input">
+                <div class="level-box">
+                    Lvl: <input type="number" id="char-level" min="1" max="99" value="1">
+                </div>
+            </header>
+
+            <section class="bio-row">
+                <input type="text" id="char-race" placeholder="Race">
+                <input type="text" id="char-class" placeholder="Class">
+            </section>
+
+            <section class="stats-bar">
+                <div class="stat"><span>STR</span><input type="number" id="str" value="10"></div>
+                <div class="stat"><span>DEX</span><input type="number" id="dex" value="10"></div>
+                <div class="stat"><span>CON</span><input type="number" id="con" value="10"></div>
+                <div class="stat"><span>INT</span><input type="number" id="int" value="10"></div>
+                <div class="stat"><span>WIS</span><input type="number" id="wis" value="10"></div>
+                <div class="stat"><span>CHA</span><input type="number" id="cha" value="10"></div>
+            </section>
+
+            <section class="lists-container">
+                <div class="scroll-box">
+                    <h3>Gear</h3>
+                    <textarea id="gear-list" placeholder="Sword, Shield, Health Potion..."></textarea>
+                </div>
+                <div class="scroll-box">
+                    <h3>Abilities</h3>
+                    <textarea id="ability-list" placeholder="Fireball, Second Wind, Sneak Attack..."></textarea>
+                </div>
+            </section>
+
+            <section class="skills-visual">
+                <h3>Skills</h3>
+                <div id="skills-grid">
+                    <label><input type="checkbox"> Acrobatics</label>
+                    <label><input type="checkbox"> Athletics</label>
+                    <label><input type="checkbox"> Insight</label>
+                    <label><input type="checkbox"> Stealth</label>
+                    <label><input type="checkbox"> Perception</label>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
