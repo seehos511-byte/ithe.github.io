@@ -7,19 +7,19 @@ body { margin: 0; background: #210e18; color: white; }
 /* Sidebar: 25% width */
 .sidebar {
     width: 25%;
-    background: #1a252f;
+    background: #14040f;
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-right: 2px solid #34495e;
+    border-right: 2px solid #8f2457;
 }
 
 #image-container img {
     width: 100%;
     border-radius: 8px;
     margin-bottom: 15px;
-    border: 3px solid #3498db;
+    border: 3px solid #ff54d4;
 }
 
 /* Main Content: 75% width */
@@ -30,7 +30,7 @@ body { margin: 0; background: #210e18; color: white; }
     font-size: 2.5rem;
     background: transparent;
     border: none;
-    border-bottom: 2px solid #3498db;
+    border-bottom: 2px solid #ff54d4;
     color: white;
     text-align: center;
 }
